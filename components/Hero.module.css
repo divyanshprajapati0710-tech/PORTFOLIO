@@ -1,0 +1,61 @@
+.hero {
+  min-height: 100vh; background: var(--navy);
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-start;
+  padding: 0 10vw; position: relative; overflow: hidden;
+}
+.grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(91,108,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91,108,255,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.glow {
+  position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(91,108,255,0.18) 0%, transparent 70%);
+  top: -100px; right: -100px; pointer-events: none;
+}
+.terminal {
+  font-family: var(--font-space), monospace;
+  font-size: 0.9rem; color: var(--indigo2); margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+.terminal::before { content: '$ '; opacity: 0.5; }
+.name {
+  font-family: var(--font-space), sans-serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 700; line-height: 1; color: var(--white);
+  letter-spacing: -0.03em; margin-bottom: 1.25rem;
+}
+.cursor {
+  display: inline-block; width: 4px; height: 0.85em;
+  background: var(--indigo); margin-left: 4px;
+  vertical-align: middle; animation: blink 1s step-end infinite;
+}
+.role {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: rgba(255,255,255,0.5); font-weight: 300;
+  margin-bottom: 2.5rem; max-width: 520px; line-height: 1.6;
+}
+.role span { color: var(--indigo2); font-weight: 500; }
+.cta {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: var(--indigo); color: var(--white);
+  padding: 0.85rem 1.8rem; border-radius: 6px;
+  font-family: var(--font-space), sans-serif;
+  font-weight: 600; font-size: 0.9rem; text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(91,108,255,0.45); }
+.scroll {
+  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  color: rgba(255,255,255,0.3); font-size: 0.75rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.scrollLine {
+  width: 1px; height: 50px;
+  background: linear-gradient(to bottom, rgba(91,108,255,0.6), transparent);
+  animation: scrollDrop 2s ease-in-out infinite;
+}
